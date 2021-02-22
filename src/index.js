@@ -2,6 +2,7 @@ const state = {
   colors: ['#e367a4', '#48b1f3'],
   directions:[0,45,90,135,180,225,270,315],
   currentDirection: 90,
+  counter: 0,
 };
 
 /**
@@ -12,25 +13,7 @@ const init = () => {
   makeLegendColors();
   makeGradient();
   makeCssCode();
-
-  const randFirst = document.getElementById('randFirst');
-  const randAll = document.getElementById('randAll');
-  const randLast = document.getElementById('randLast');
-
-  randFirst.addEventListener('click', (e) => {
-    state.colors[0] = randomHexaColorGenerator();
-    init();
-  });
-
-  randLast.addEventListener('click', (e) => {
-    state.colors[1] = randomHexaColorGenerator();
-    init();
-  });
-
-  randAll.addEventListener('click', (e) => {
-    state.colors.forEach((color,index) => state.colors[index] = randomHexaColorGenerator());
-    init();
-  });
+  makeCounter();
 };
 
 /**
@@ -100,6 +83,14 @@ const makeGradient = () => {
 };
 
 /**
+ * Generate counter of random colors generated
+ */
+const makeCounter = () => {
+  const counter = document.getElementById('nbColors');
+  counter.textContent = `${state.counter} generated ${state.counter>1 ? 'colors' : 'color'}`;
+}
+
+/**
  * Generate CSS code of gradient
  */
 const makeCssCode = () => {
@@ -118,5 +109,29 @@ const handleChangeDirection = (newDirection) => {
   state.currentDirection = Number(newDirection);
   init();
 };
+
+/**
+ * Buttons random colors events
+ */
+document.getElementById('randFirst').addEventListener('click', (e) => {
+  state.colors[0] = randomHexaColorGenerator();
+  state.counter += 1;
+  init();
+});
+
+document.getElementById('randLast').addEventListener('click', (e) => {
+  state.colors[1] = randomHexaColorGenerator();
+  state.counter += 1;
+  init();
+});
+
+document.getElementById('randAll').addEventListener('click', (e) => {
+  state.colors.forEach((color,index) => {
+    state.colors[index] = randomHexaColorGenerator();
+    state.counter = state.counter+ 1;
+  });
+  init();
+});
+
 
 document.addEventListener("DOMContentLoaded", init());
