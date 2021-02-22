@@ -1,0 +1,71 @@
+.button {
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 1rem;
+  height: 2.5em;
+  position: relative;
+  background-color: #fff;
+  border-color: #dbdbdb;
+  color: #363636;
+  cursor: pointer;
+  padding: calc(.5em - 1px) 1em;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.5;
+  vertical-align: top;
+}
+.button:hover {
+  border-color: #b5b5b5;
+  color: #363636;
+}
+.button:focus {
+  border-color: #3273dc;
+  color: #363636;
+}
+.button:active {
+  border-color: #4a4a4a;
+  color: #363636;
+}
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+  .buttons .button:not(:last-child) {
+    margin-right: .5rem;
+  }
+
+  .buttons.group .button:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .buttons.group .button:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: -1px;
+  }
+
+  .buttons.group .button:last-child {
+    margin-right: 0;
+  }
+
+  .buttons.group .button:hover {
+    z-index: 2;
+  }
+
+  .buttons.group .button:focus, 
+  .buttons.group .button:active {
+    z-index: 3;
+  }
+
+  .buttons.group .button:focus:hover, 
+  .buttons.group .button:active:hover {
+    z-index: 4;
+  }

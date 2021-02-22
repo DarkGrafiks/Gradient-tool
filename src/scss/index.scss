@@ -1,0 +1,77 @@
+@use 'vars';
+@import 'reset';
+
+/* Specific */
+body {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+  font-size: 1.2em;
+}
+
+/* Styles - gradient */
+@import 'buttons';
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#nbColors {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  padding: vars.$min-spacer vars.$min-spacer*2;
+  font-size: .8em;
+  color: #fff;
+  background-color: #3273dc;
+  border-radius: 0 0 vars.$min-radius vars.$min-radius;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#root {
+  width: 450px;
+  margin: 3em auto;
+  text-align: center;
+}
+
+.buttons {
+  margin: 0 auto vars.$spacer;
+  justify-content: center;
+}
+
+#colors {
+  display: flex;
+  padding: vars.$spacer;
+  justify-content: space-around;
+  font-family: monospace;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px #999;
+  color: #666;
+}
+#direction {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1;
+}
+#gradient {
+  height: 300px;
+  margin-bottom: vars.$spacer;
+  line-height: 2;
+  color: rgba(255,255,255,.5);
+  border-radius: vars.$min-radius;
+}
+
+.code {
+  padding: vars.$spacer;
+  font-size: .75em;
+  white-space: normal;
+  background-color: #e9e9e9;
+  border-radius: vars.$min-radius;
+}
