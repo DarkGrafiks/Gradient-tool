@@ -4,9 +4,29 @@ Générateur de dégradé CSS.
 
 ## Installation
 
-Ouvrez le fichier index.html dans votre navigateur et... voilà :-).
+Après avoir récupéré le repo, installez les packages Node :
+
+```bash
+yarn
+```
+ou
+```bash
+npm i 
+```
+
+Ensuite lancez l'application à l'aide de la commande :
+
+```bash
+yarn start
+```
+ou
+```bash
+npm start
+```
 
 ## Stack
 
 - Vanilla JS
+- Webpack
+- Babel
 - Sass
