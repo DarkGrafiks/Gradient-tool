@@ -12,6 +12,25 @@ const init = () => {
   makeLegendColors();
   makeGradient();
   makeCssCode();
+
+  const randFirst = document.getElementById('randFirst');
+  const randAll = document.getElementById('randAll');
+  const randLast = document.getElementById('randLast');
+
+  randFirst.addEventListener('click', (e) => {
+    state.colors[0] = randomHexaColorGenerator();
+    init();
+  });
+
+  randLast.addEventListener('click', (e) => {
+    state.colors[1] = randomHexaColorGenerator();
+    init();
+  });
+
+  randAll.addEventListener('click', (e) => {
+    state.colors.forEach((color,index) => state.colors[index] = randomHexaColorGenerator());
+    init();
+  });
 };
 
 /**
@@ -93,7 +112,7 @@ const makeCssCode = () => {
 
 /**
  * Change gradient direction and update UI
- * @param {number} newDirection 
+ * @param {number} newDirection
  */
 const handleChangeDirection = (newDirection) => {
   state.currentDirection = Number(newDirection);
