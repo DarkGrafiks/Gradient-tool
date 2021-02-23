@@ -2,6 +2,8 @@
 
 Générateur de dégradé CSS.
 
+[Voir la démo](https://elegant-bassi-de4240.netlify.app/)
+
 ## Installation
 
 Après avoir récupéré le repo, installez les packages Node :
