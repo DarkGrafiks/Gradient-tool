@@ -28,7 +28,7 @@ npm start
 
 ## Stack
 
-- Vanilla JS
+- Javascript
 - Webpack
 - Babel
 - Sass
